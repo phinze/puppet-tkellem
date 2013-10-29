@@ -11,7 +11,7 @@ define tkellem::listen(
 
   exec { "add-tkellem-listen-${title}":
     user        => 'tkellem',
-    environment => 'HOME=/home/tkellem',
+    environment => 'HOME=/var/lib/tkellem',
     command     => "/usr/local/bin/tkellem admin 'listen ${address}'",
     unless      => "/usr/local/bin/tkellem admin 'listen' | /bin/grep '${address}'",
     require     => Class['tkellem::service']
