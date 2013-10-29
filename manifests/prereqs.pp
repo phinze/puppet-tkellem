@@ -10,6 +10,7 @@ class tkellem::prereqs {
 
   user { 'tkellem':
     ensure     => present,
+    home       => '/var/lib/tkellem',
     managehome => true
   }
 }
