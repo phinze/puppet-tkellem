@@ -1,7 +1,10 @@
 class tkellem(
-  $default_listen = true
+  $default_listen = true,
+  $logdir         = '/var/lib/tkellem/.tkellem/logs'
 ){
-  include tkellem::prereqs
+  class { 'tkellem::prereqs':
+    logdir => $logdir
+  }
   include tkellem::package
   include tkellem::service
 
